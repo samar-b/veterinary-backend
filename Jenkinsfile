@@ -14,8 +14,11 @@ pipeline{
 	stage('get to easy-ms') {
             steps {
                 echo "Getting into easy-ms";
-                dir 'easy-ms-sdk' ;
-		sh 'ls'
+		dir('easy-ms-sdk') {
+                    sh 'ls'
+                   
+                }
+              
             }
         }
     
