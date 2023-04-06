@@ -22,8 +22,20 @@ pipeline{
             }
         }
     */
+	    
+	    
+	    
+	      stage('version'){
+            steps {
+		echo "maven version";
+		sh 'echo $MAVEN_HOME'
+	        sh 'mvn -version'
+		 
+                
+            }
+        }
      
-        stage('Build'){
+       /* stage('Build'){
             steps {
 		echo "building easy-ms";
 		dir('easy-ms-sdk') {
@@ -36,7 +48,7 @@ pipeline{
                 }
                 
             }
-        }
+        }*/
         
 
      
