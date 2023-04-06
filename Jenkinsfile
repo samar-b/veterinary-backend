@@ -23,7 +23,7 @@ pipeline{
         }
     
      
-       /* stage('Clean'){
+        stage('Clean'){
             steps {
                 sh 'mvn clean -DskipTests'
             }
@@ -35,7 +35,7 @@ pipeline{
         }
 
      
-	            stage('SonarQube Analysis'){
+	        /*    stage('SonarQube Analysis'){
             steps {
                 withSonarQubeEnv(credentialsId: 'jenkins-soonar',installationName: 'sonarqube') {
                     sh """
