@@ -1,0 +1,2 @@
+CREATE SCHEMA veterinary;
+ALTER SCHEMA veterinary OWNER TO veterinary_user;
