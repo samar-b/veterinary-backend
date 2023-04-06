@@ -26,12 +26,9 @@ pipeline{
         stage('Build'){
             steps {
 		echo "building easy-ms";
-		 withEnv(["MAVEN_HOME=/opt/maven/apache-maven-3.9.1/bin"]) {
-  			  sh 'mvn -version'
-			}
-
 		dir('easy-ms-sdk') {
                     sh 'ls'
+		     sh 'echo $MAVEN_HOME'
 	            sh 'mvn -version'
 		    sh 'echo $MAVEN_HOME'
 		    sh 'mvn clean install -DskipTests'
