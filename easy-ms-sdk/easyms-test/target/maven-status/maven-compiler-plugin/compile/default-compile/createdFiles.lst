@@ -1,0 +1,4 @@
+com\easyms\test\AbstractResourceTest.class
+com\easyms\test\SecurityTestExtension.class
+com\easyms\test\AbstractResourceTest$OAuth2AuthenticationProcessingFilterProcessor.class
+com\easyms\test\AbstractTest.class

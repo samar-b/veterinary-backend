@@ -1,0 +1,4 @@
+com\easyms\logging\ms\LoggerNameConverter.class
+com\easyms\logging\autoconfigure\EasyMsLoggingEnvProcessor.class
+com\easyms\logging\autoconfigure\EasyMsLoggingAutoconfiguration.class
+com\easyms\logging\ms\SleuthLoggingValve.class

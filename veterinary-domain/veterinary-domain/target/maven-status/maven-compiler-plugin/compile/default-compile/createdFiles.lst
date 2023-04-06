@@ -1,0 +1,6 @@
+com\veterinary\dto\CustomerDto.class
+com\veterinary\dto\PetDto$PetDtoBuilder.class
+com\veterinary\dto\CustomerDto$CustomerDtoBuilder.class
+com\veterinary\dto\TreatmentDto$TreatmentDtoBuilder.class
+com\veterinary\dto\TreatmentDto.class
+com\veterinary\dto\PetDto.class
