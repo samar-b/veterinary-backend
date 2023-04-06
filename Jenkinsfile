@@ -7,7 +7,7 @@ pipeline{
         stage('Cloning from GitHub') {
             steps {
                 echo "Getting Project from GitHub";
-                git branch: 'master', credentialsId: 'GitFlowCredential', url: 'https://github.com/khaoulaBouslimi/DevOps-Internship-Git-Floww.git'
+                git branch: 'samar', url: 'https://github.com/samar-b/veterinary-backend.git'
             }
         }
     
