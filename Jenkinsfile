@@ -10,6 +10,14 @@ pipeline{
                 git branch: 'samar', url: 'https://github.com/samar-b/veterinary-backend.git'
             }
         }
+	   
+	stage('get to easy-ms') {
+            steps {
+                echo "Getting into easy-ms";
+                cd 'easy-ms-sdk' ;
+		echo "$PWD" ;
+            }
+        }
     
      
        /* stage('Clean'){
