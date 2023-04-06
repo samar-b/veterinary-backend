@@ -28,7 +28,7 @@ pipeline{
 	      stage('version'){
             steps {
 		echo "maven version";
-		sh 'echo $MAVEN_HOME'
+		sh 'echo $MAVEN_HOME' -Dorg.jenkinsci.plugins.durabletask.BourneShellScript.LAUNCH_DIAGNOSTICS=true
 	        sh 'mvn -version'
 		 
                 
