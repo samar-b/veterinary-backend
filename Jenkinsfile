@@ -28,6 +28,8 @@ pipeline{
 		echo "building easy-ms";
 		dir('easy-ms-sdk') {
                     sh 'ls'
+	            sh 'echo mvn -version'
+		    sh 'echo $MAVEN_HOME'
 		    sh 'mvn clean install -DskipTests'
                    
                 }
