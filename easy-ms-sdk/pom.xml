@@ -61,7 +61,7 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.version>3.0.5</maven.version>
+        <maven.version>3.5.0</maven.version>
         <jacoco.version>0.8.4</jacoco.version>
         <skip.unit.tests>false</skip.unit.tests>
         <skip.integration.tests>false</skip.integration.tests>
@@ -200,7 +200,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.0.5</version>
+                    <version>3.8.0</version>
                     <configuration>
                         <release>11</release>
                         <fork>true</fork>
