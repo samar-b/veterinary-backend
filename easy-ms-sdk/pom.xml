@@ -61,7 +61,7 @@
         <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.version>3.5.0</maven.version>
+        <maven.version>3.0.5</maven.version>
         <jacoco.version>0.8.4</jacoco.version>
         <skip.unit.tests>false</skip.unit.tests>
         <skip.integration.tests>false</skip.integration.tests>
