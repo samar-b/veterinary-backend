@@ -11,7 +11,7 @@ pipeline{
             }
         }
 	   
-	/*stage('get to easy-ms') {
+	stage('get to easy-ms') {
             steps {
                 echo "Getting into easy-ms";
 		dir('easy-ms-sdk') {
@@ -21,14 +21,14 @@ pipeline{
               
             }
         }
-    */
+    
 	    
 	    
 	    
 	      stage('version'){
             steps {
 		echo "maven version";
-		echo $MAVEN_HOME
+		echo "$MAVEN_HOME" ;
 	        sh 'mvn -version'
 		 
                 
