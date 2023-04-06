@@ -11,7 +11,7 @@ pipeline{
             }
         }
 	   
-	stage('get to easy-ms') {
+	/*stage('get to easy-ms') {
             steps {
                 echo "Getting into easy-ms";
 		dir('easy-ms-sdk') {
@@ -21,18 +21,20 @@ pipeline{
               
             }
         }
-    
+    */
      
-        stage('Clean'){
+        stage('Build'){
             steps {
-                sh 'mvn clean -DskipTests'
+		echo "building easy-ms";
+		dir('easy-ms-sdk') {
+                    sh 'ls'
+		    sh 'mvn clean install -DskipTests'
+                   
+                }
+                
             }
         }
-         stage('Compile'){
-            steps {
-                sh 'mvn compile -DskipTests '  
-            }
-        }
+        
 
      
 	        /*    stage('SonarQube Analysis'){
