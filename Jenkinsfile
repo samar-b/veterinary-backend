@@ -1,5 +1,9 @@
 pipeline{
     agent any
+	
+    environment {
+    	DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+      }
 
     stages{
 
@@ -70,13 +74,19 @@ pipeline{
 
 	  stage('Build Docker Image') {
             steps {
-                script {
-                        sh """ docker build -t samarbelhadj/vetpipe:1.0 ."""
-                    
-                  
+		 dir('my-veterinary-ms') {
+			 sh 'docker build -t samarbelhadj/vetpipe:1.0 .'
+                     
+                   
                 }
+              
+              
             }
         }       
+	    
+	    
+	    
+	    
         
     
 	  /*  stage('Build') {
