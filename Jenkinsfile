@@ -68,6 +68,16 @@ pipeline{
             }
         }
 
+	  stage('Build Docker Image') {
+            steps {
+                script {
+                        sh """ docker build -t samarbelhadj/vetpipe:1.0 ."""
+                    
+                  
+                }
+            }
+        }       
+        
     
 	  /*  stage('Build') {
       steps {
