@@ -17,7 +17,6 @@ pipeline{
 		dir('easy-ms-sdk') {
                      sh 'ls'
 		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
-          		sh 'mvn --version'
 			sh 'mvn clean install -DskipTests'
       			  }
                    
