@@ -76,56 +76,37 @@ pipeline{
             steps {
 		 dir('my-veterinary-ms') {
 			 sh 'docker build -t samarbelhadj/vetpipe:1.0 .'
-			 sh 'docker version'
-			 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                     
-                   
+			 sh ''
                 }
-              
-              
             }
-        }       
+        }   
+	    
+	   stage('Login') {
+    	  steps {
+      		  sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+     		 }
+  	  }
 	   
 	    
+    	stage('Push') {
+    	  steps {
+       		 sh 'docker push samarbelhadj/vetpipe:1.0'
+    		  }
+   	 }
+    }
+  
+	    
+	    
+ 	 post {
+ 	   always {
+  	    sh 'docker logout'
+ 	   }
+	  }
 	    
 	    
 	    
         
     
-	  /*  stage('Build') {
-      steps {
-        withEnv(['PATH+MAVEN=/path/to/maven/bin']) {
-          sh 'mvn --version'
-        }
-      }
-    }
-	    
-	    
-	      stage('version'){
-            steps {
-		echo "maven version";
-		echo "$MAVEN_HOME" ;
-	        sh 'mvn -version'
-		 
-                
-            }
-        }*/
-     
-       /* stage('Build'){
-            steps {
-		echo "building easy-ms";
-		dir('easy-ms-sdk') {
-                    sh 'ls'
-		     sh 'echo $MAVEN_HOME'
-	            sh 'mvn -version'
-		    sh 'echo $MAVEN_HOME'
-		    sh 'mvn clean install -DskipTests'
-                   
-                }
-                
-            }
-        }*/
-        
 
      
 	        /*    stage('SonarQube Analysis'){
@@ -168,8 +149,7 @@ pipeline{
             }
         }   */
       
-    }
-
+   
 
 
 
