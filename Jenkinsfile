@@ -18,7 +18,7 @@ pipeline{
                      sh 'ls'
 		     sh 'java --version'
 		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
-			sh 'mvn clean install -DskipTests'
+			sh 'mvn clean install -X'
       			  }
                    
                 }
