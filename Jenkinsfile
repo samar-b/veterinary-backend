@@ -76,6 +76,7 @@ pipeline{
             steps {
 		 dir('my-veterinary-ms') {
 			 sh 'docker build -t samarbelhadj/vetpipe:1.0 .'
+			 sh 'docker version'
 			 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
                      
                    
