@@ -16,7 +16,6 @@ pipeline{
                 echo "Getting into easy-ms";
 		dir('easy-ms-sdk') {
                      sh 'ls'
-		     sh 'java --version'
 		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
 			sh 'mvn clean install -X'
       			  }
@@ -25,6 +24,50 @@ pipeline{
               
             }
         }
+	    
+	    
+	stage('Build veterinary-domain') {
+            steps {
+                echo "Getting into veterinary-domain";
+		dir('veterinary-domain') {
+                     sh 'ls'
+		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
+			sh 'mvn clean install -X'
+      			  }
+                   
+                }
+              
+            }
+        }
+	    
+	stage('Build config-server') {
+            steps {
+                echo "Getting into config-server";
+		dir('config-server') {
+                     sh 'ls'
+		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
+			sh 'mvn clean install -X'
+      			  }
+                   
+                }
+              
+            }
+        }
+	
+	stage('Build veterinary-ms') {
+            steps {
+                echo "Getting into my-veterinary-ms";
+		dir('my-veterinary-ms') {
+                     sh 'ls'
+		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
+			sh 'mvn clean install -X'
+      			  }
+                   
+                }
+              
+            }
+        }
+
     
 	  /*  stage('Build') {
       steps {
