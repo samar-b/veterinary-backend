@@ -16,6 +16,7 @@ pipeline{
                 echo "Getting into easy-ms";
 		dir('easy-ms-sdk') {
                      sh 'ls'
+		     sh 'java --version'
 		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
 			sh 'mvn clean install -DskipTests'
       			  }
