@@ -11,18 +11,28 @@ pipeline{
             }
         }
 	   
-	stage('get to easy-ms') {
+	stage('Build easy-ms') {
             steps {
                 echo "Getting into easy-ms";
 		dir('easy-ms-sdk') {
-                    sh 'ls'
+                     sh 'ls'
+		     withEnv(['PATH+MAVEN=/opt/maven/bin']) {
+          		sh 'mvn --version'
+			sh 'mvn clean install -DskipTests'
+      			  }
                    
                 }
               
             }
         }
     
-	    
+	  /*  stage('Build') {
+      steps {
+        withEnv(['PATH+MAVEN=/path/to/maven/bin']) {
+          sh 'mvn --version'
+        }
+      }
+    }
 	    
 	    
 	      stage('version'){
@@ -33,7 +43,7 @@ pipeline{
 		 
                 
             }
-        }
+        }*/
      
        /* stage('Build'){
             steps {
