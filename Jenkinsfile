@@ -6,14 +6,6 @@ pipeline{
       }
 
     stages{
-
-
-        stage('Cloning from GitHub') {
-            steps {
-                echo "Getting Project from GitHub";
-                git branch: 'samar', url: 'https://github.com/samar-b/veterinary-backend.git'
-            }
-        }
 	   
 	stage('Build easy-ms') {
             steps {
@@ -81,18 +73,14 @@ pipeline{
             }
         }   
 	    
-	   stage('Login') {
+	   stage('Push docker image') {
     	  steps {
       		  sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+		  sh 'docker push samarbelhadj/vetpipe:1.0'
      		 }
   	  }
 	   
-	    
-    	stage('Push') {
-    	  steps {
-       		 sh 'docker push samarbelhadj/vetpipe:1.0'
-    		  }
-   	 }
+
     }
   
 	    
