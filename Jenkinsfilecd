@@ -14,6 +14,20 @@ stages{
 		  sh 'docker pull samarbelhadj/config-server:1.0'
      		 }
   	  }
+	  
+	  
+	     
+	   stage('create pod') {
+    	  steps {
+      		  sh 'cat myapp.yml'
+		  sh 'kubectl create -f myapp.yml'
+		   sh 'kubectl get pods'
+     		 }
+  	  }
+	  
+	  
+	  
+	  
 	   
 
     }
