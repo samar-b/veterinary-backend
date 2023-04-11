@@ -1,1 +1,13 @@
-
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firstpod
+  labels:
+    app: app
+spec:
+  containers:
+  - name: config-server
+    image: samarbelhadj/config-server
+    ports:
+    - name: config-server-port
+      containerPort: 2001
