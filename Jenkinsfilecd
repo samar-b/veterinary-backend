@@ -22,7 +22,7 @@ stages{
 	   stage('Deployin to Kubernetes') {
      		 steps {
       		  script {
-       			   kubernetesDeploy(configs: "myapp.yml")
+       			   kubernetesDeploy(configs: "myapp.yml" , kubeconfigId :"kubernetes" )
        			 }
       		}
    	 }
