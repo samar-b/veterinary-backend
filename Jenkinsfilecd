@@ -17,17 +17,7 @@ stages{
 	  
 	  
 	     
-	   /*
-	   stage('create pod') {
-    	  steps {
-      		  sh 'cat myapp.yml'
-		  sh 'minikube status'
-		  sh 'kubectl create -f myapp.yml'
-		   sh 'kubectl get pods'
-     		 }
-  	  }
-	  */
-	  
+	 
 	  
 	   stage('Deployin to Kubernetes') {
      		 steps {
