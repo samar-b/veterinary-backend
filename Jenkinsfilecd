@@ -22,7 +22,6 @@ stages{
 	   stage('Deployin to Kubernetes') {
      		 steps {
       		  script {
-		  	   sh ' kubectl create -f servicedeployment.yml '
        			   kubernetesDeploy(configs: "deploymentservice.yml" , kubeconfigId :"kubernetes" )
        			 }
       		}
