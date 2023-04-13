@@ -17,6 +17,7 @@ stages{
 	  
 	  
 	     
+	   /*
 	   stage('create pod') {
     	  steps {
       		  sh 'cat myapp.yml'
@@ -25,7 +26,7 @@ stages{
 		   sh 'kubectl get pods'
      		 }
   	  }
-	  
+	  */
 	  
 	  
 	   stage('Deployin to Kubernetes') {
