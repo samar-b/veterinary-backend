@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: server-deployment
+  labels:
+    app: server
 spec:
   replicas: 1
   selector:
@@ -13,17 +15,18 @@ spec:
         app: server
     spec:
       containers:
-      - name: k8s-demo
+      - name: vetserver
         image: samarbelhadj/config-server:1.0
         ports:
         - name: server-port
           containerPort: 2001
           
+          
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: server
+  name: server-service
 spec:
   type: NodePort
   ports:
@@ -34,8 +37,4 @@ spec:
     name: http
   selector:
     app: server
-
-
-
-
-
+    
