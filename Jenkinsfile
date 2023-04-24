@@ -67,7 +67,6 @@ pipeline{
 	  stage('Build Docker Image') {
             steps {
 		 dir('my-veterinary-ms') {
-			 sh 'sudo chmod 666 /var/run/docker.sock'
 			 sh 'docker build -t samarbelhadj/vetpipe:1.0 .'
 			 sh ''
                 }
