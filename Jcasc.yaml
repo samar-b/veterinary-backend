@@ -13,7 +13,7 @@ jobs:
             scm {
               git {
                 remote {
-                  url('https://github.com/samar-b/veterinary-backend')
+                  url('https://github.com/samar-b/veterinary-backend.git')
                 }
                 branch('*/samar')
               }
