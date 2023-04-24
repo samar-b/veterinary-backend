@@ -9,7 +9,7 @@ jobs:
         }
         definition {
           cpsScm {
-            scriptPath('Jenkinsfile')
+            scriptPath('Jenkins')
             scm {
               git {
                 remote {
