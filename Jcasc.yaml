@@ -15,7 +15,7 @@ jobs:
                 remote {
                   url('https://github.com/samar-b/veterinary-backend.git')
                 }
-                branch('*/samar')
+                branch('samar')
               }
             }
             lightweight(true)
