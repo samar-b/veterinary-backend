@@ -1,25 +1,26 @@
-
 jobs:
   - script: >
-      folder('my-veterinary-ui')
+      folder('formation')
   - script: >
-      pipelineJob('my-veterinary-ui/ci') {
+      pipelineJob('pipeline/ci') {
         parameters {
           booleanParam('RUN_TESTS', true, 'uncheck to disable tests')
           stringParam('VERSION', '1.0', 'my version')
         }
         definition {
           cpsScm {
-            scriptPath('cicd/CI/Jenkinsfile')
+            scriptPath('Jenkinsfile')
             scm {
               git {
                 remote {
-                  url('https://gitlab.com/hammami.medfares/my-veterinary-ui.git')
+                  url('https://github.com/samar-b/veterinary-backend.git')
                 }
-                branch('*/main')
+                branch('*/samar')
               }
             }
             lightweight(true)
-          }
+          } 
         }
       }
+
+ 
