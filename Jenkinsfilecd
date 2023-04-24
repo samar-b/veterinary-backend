@@ -23,7 +23,6 @@ stages{
      		 steps {
       		  script {
 		  	sh 'minikube start'
-			sleep 60
 			sh 'minikube status'
 		  	kubernetesDeploy (configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
        			 }
