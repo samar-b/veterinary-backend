@@ -22,8 +22,6 @@ stages{
 	   stage('Deployin to Kubernetes') {
      		 steps {
       		  script {
-		  	sh 'minikube start'
-			sh 'minikube status'
 		  	kubernetesDeploy (configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
        			 }
       		}
