@@ -23,6 +23,7 @@ stages{
      		 steps {
       		  script {
 		  	kubernetesDeploy (configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
+			kubectl get deployment
        			 }
       		}
    	 }
