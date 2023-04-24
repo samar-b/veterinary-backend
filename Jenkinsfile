@@ -67,6 +67,7 @@ pipeline{
 	  stage('Build Docker Image') {
             steps {
 		 dir('my-veterinary-ms') {
+			 sh 'docker run docker:dind'
 			 sh 'docker build -t samarbelhadj/vetpipe:1.0 .'
 			 sh ''
                 }
