@@ -1,0 +1,14 @@
+podTemplate(
+    inheritFrom: 'jenkins-agent',
+    containers: [
+        containerTemplate(name: 'docker', image: 'docker:dind', ttyEnabled: true, command: 'cat')
+    ]
+) {
+    node(POD_LABEL) {
+        stage ('Checkout Source Code') {
+            checkout scm
+        }
+       
+       
+    }
+}
