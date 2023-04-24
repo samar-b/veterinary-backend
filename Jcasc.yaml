@@ -2,7 +2,7 @@ jobs:
   - script: >
       folder('formation')
   - script: >
-      pipelineJob('pipelineCI') {
+      pipelineJob('formation/pipelineCI') {
         parameters {
           booleanParam('RUN_TESTS', true, 'uncheck to disable tests')
           stringParam('VERSION', '1.0', 'my version')
