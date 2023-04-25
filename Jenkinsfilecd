@@ -22,7 +22,9 @@ stages{
 	   stage('Deployin to Kubernetes') {
      		 steps {
       		  script {
-		  	kubernetesDeploy (configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
+		  
+		  	sh ' kubectl get pods'
+		  	//kubernetesDeploy (configs: 'deploymentservice.yml', kubeconfigId: 'kubernetes')
 			
        			 }
       		}
