@@ -23,5 +23,25 @@ jobs:
         }
       }
       
+      
+       script: >
+      pipelineJob('formation/pipelineCD') {
+        
+        definition {
+          cpsScm {
+            scriptPath('Jenkinsfilecd')
+            scm {
+              git {
+                remote {
+                  url('https://github.com/samar-b/veterinary-backend.git')
+                }
+                branch('samar')
+              }
+            }
+            lightweight(true)
+          } 
+        }
+      }
+      
 
  
