@@ -18,7 +18,6 @@ jobs:
                 branch('samar')
               }
             }
-            lightweight(true)
           } 
         }
       }
@@ -26,7 +25,10 @@ jobs:
       
   - script: >
       pipelineJob('formation/pipelineCD') {
-        
+        parameters {
+          booleanParam('RUN_TESTS', true, 'uncheck to disable tests')
+          stringParam('VERSION', '1.0', 'my version')
+        }
         definition {
           cpsScm {
             scriptPath('Jenkinsfilecd')
@@ -38,7 +40,6 @@ jobs:
                 branch('samar')
               }
             }
-            lightweight(true)
           } 
         }
       }
