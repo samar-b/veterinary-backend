@@ -24,7 +24,7 @@ jobs:
       }
       
       
-       script: >
+  - script: >
       pipelineJob('formation/pipelineCD') {
         
         definition {
