@@ -22,7 +22,7 @@ stages{
 	   stage('Deployin to Kubernetes') {
      		 steps {
       		
-			withKubeConfig([credentialsId: 'k8s', serverUrl: 'https://192.168.49.2:8443']) {
+			withKubeConfig([credentialsId: 'kubernetes', serverUrl: 'https://192.168.49.2:8443']) {
                             sh 'kubectl apply -f deploymentservice.yml'
 			    sh 'kubectl get pods'
                         }
