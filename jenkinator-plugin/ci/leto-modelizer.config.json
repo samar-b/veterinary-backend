@@ -1,0 +1,28 @@
+{
+  "jenkinator-plugin": {
+    "PipelineJob_1": {
+      "x": 189,
+      "y": 206,
+      "width": 420,
+      "height": 270,
+      "needsResizing": false,
+      "needsPositioning": false
+    },
+    "CodeCheckout_1": {
+      "x": 50,
+      "y": 50,
+      "width": 110,
+      "height": 80,
+      "needsResizing": false,
+      "needsPositioning": false
+    },
+    "BuildAndTestJava_1": {
+      "x": 230,
+      "y": 50,
+      "width": 110,
+      "height": 80,
+      "needsResizing": false,
+      "needsPositioning": false
+    }
+  }
+}

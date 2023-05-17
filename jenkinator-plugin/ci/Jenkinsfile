@@ -1,0 +1,21 @@
+// TODO: global variables
+
+podTemplate(
+  inheritFrom: "jenkins-inbound-agent",
+  containers: [
+    containerTemplate(name: "java-container", image: "kube9-dtr-dev.fr.world.socgen/byo-ad016-dev-acid/maven-builder:", alwaysPullImage: false, ttyEnabled: true, command: "cat"),
+  ]
+) {
+  node(POD_LABEL) {
+    stage("CodeCheckout_1") {
+      checkout scm
+    }
+    stage("BuildAndTestJava_1") {
+      container("java-container") {
+        sh """
+          mvn -B -f "./pom.xml" -s "$HOME/settings.xml" clean install
+        """
+      }
+    }
+  }
+}

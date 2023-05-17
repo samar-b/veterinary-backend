@@ -1,0 +1,20 @@
+jobs:
+- script: |
+    folder("my-jenkins-folder")
+- script: |
+    pipelineJob("my-jenkins-folder/PipelineJob_1") {
+      // TODO parameters
+      definition {
+        cpsScm {
+          scriptPath "Jenkinsfile"
+          lightweight true
+          scm {
+            git {
+              remote {
+                url 
+              }
+            }
+          }
+        }
+      }
+    }
